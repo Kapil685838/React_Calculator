@@ -2,11 +2,13 @@ import React,{useState} from 'react';
 import '../Styles/Calculator.css';
 
 const Calculator = () => {
+    // Declaring useStates for num1, num2, result and error
     const [num1, setNum1] = useState('');
     const [num2, setNum2] = useState('');
     const [result, setResult] = useState('');
     const [error, setError] = useState('');
 
+    // Validation the form
     function validation() {
         if (num1 === '') {
             setResult('');
@@ -27,6 +29,7 @@ const Calculator = () => {
         return true;
     }
 
+    // performing the operation
     function performOperation(op) {
         let res = 0;
         switch(op){
@@ -45,6 +48,7 @@ const Calculator = () => {
             default:
                 break;
         }
+        // setting result of operation
         setResult(`${res}`);
     }
 
